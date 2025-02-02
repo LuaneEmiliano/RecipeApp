@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct RecipeAppApp: App {
+    @StateObject var viewModel = RecipeAppViewModel(service: RecipeService())
+    
     var body: some Scene {
         WindowGroup {
-            RecipeAppView()
+            RecipeAppView(viewModel:viewModel)
         }
     }
 }

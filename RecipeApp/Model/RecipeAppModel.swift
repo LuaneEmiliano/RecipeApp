@@ -30,16 +30,14 @@ struct Recipe: Codable, Identifiable {
     }
 }
 
-extension RecipeAppModel {
-    static var mockRecipeAPP = RecipeAppModel(
-        recipes: [Recipe(
-            id: "",
-            cuisine: "Malaysian",
-            name: "Apam Balik",
-            photoURLLarge: URL(filePath: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/b9ab0071-b281-4bee-b361-ec340d405320/large.jpg"),
-            photoURLSmall: URL(filePath: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/b9ab0071-b281-4bee-b361-ec340d405320/small.jpg"),
-            sourceURL: URL(filePath: "0c6ca6e7-e32a-4053-b824-1dbf749910d8"),
-            youtubeURL: URL(filePath: "https://www.youtube.com/watch?v=6R8ffRRJcrg")
-        )]
+extension Recipe {
+    static var mockRecipeAPP = Recipe(
+        id: "",
+        cuisine: "Malaysian",
+        name: "Apam Balik",
+        photoURLLarge: URL(filePath: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/b9ab0071-b281-4bee-b361-ec340d405320/large.jpg"),
+        photoURLSmall: URL(filePath: "https://d3jbb8n5wk0qxi.cloudfront.net/photos/b9ab0071-b281-4bee-b361-ec340d405320/small.jpg"),
+        sourceURL: URL(filePath: "0c6ca6e7-e32a-4053-b824-1dbf749910d8"),
+        youtubeURL: URL(filePath: "https://www.youtube.com/watch?v=6R8ffRRJcrg")
     )
 }

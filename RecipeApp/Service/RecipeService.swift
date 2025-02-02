@@ -1,5 +1,5 @@
 //
-//  Service .swift
+//  RecipeService.swift
 //  RecipeApp
 //
 //  Created by Luane Niejelski Emiliano on 2/2/25.
@@ -7,12 +7,13 @@
 
 import Foundation
 
-class Service: Network, ServiceProtocol {
-    func fetchRecipesDetails(forSearch: String) async throws -> RecipeAppModel {
+class RecipeService: Network, RecipeServiceProtocol {
+    func fetchRecipesDetails() async throws -> [Recipe] {
         guard let url = URL(string: "https://d3jbb8n5wk0qxi.cloudfront.net/recipes.json") else {
             throw NetworkError.invalidURL
         }
         print(url.absoluteString)
-        return try await fetchRecipes(url: url)
+        let container: RecipeAppModel = try await fetchRecipes(url: url)
+        return container.recipes
     }
 }

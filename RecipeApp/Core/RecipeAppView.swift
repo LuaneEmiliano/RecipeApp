@@ -8,13 +8,18 @@
 import SwiftUI
 
 struct RecipeAppView: View {
-    @ObservedObject var viewModel = RecipeAppViewModel()
+    @ObservedObject var viewModel: RecipeAppViewModel
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        List(viewModel.items) { item in
+        //    RecipeListItemRow(item: item)
+        }
+        .task {
+            viewModel.getRecipesDetails()
+        }
     }
 }
 
 #Preview {
-    RecipeAppView()
+    RecipeAppView(viewModel: RecipeAppViewModel(service: MockRecipeService()))
 }
