@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		8F3E59B52D4FEC96007201EB /* RecipeAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3E59B42D4FEC96007201EB /* RecipeAppApp.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		8F3E59C22D4FEC98007201EB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -25,6 +29,7 @@
 
 /* Begin PBXFileReference section */
 		8F3E59B12D4FEC96007201EB /* RecipeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecipeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8F3E59B42D4FEC96007201EB /* RecipeAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeAppApp.swift; sourceTree = "<group>"; };
 		8F3E59C12D4FEC98007201EB /* RecipeAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RecipeAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F3E59CB2D4FEC98007201EB /* RecipeAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RecipeAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -75,6 +80,7 @@
 		8F3E59A82D4FEC96007201EB = {
 			isa = PBXGroup;
 			children = (
+				8F3E59B42D4FEC96007201EB /* RecipeAppApp.swift */,
 				8F3E59B32D4FEC96007201EB /* RecipeApp */,
 				8F3E59C42D4FEC98007201EB /* RecipeAppTests */,
 				8F3E59CE2D4FEC98007201EB /* RecipeAppUITests */,
@@ -236,6 +242,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F3E59B52D4FEC96007201EB /* RecipeAppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
