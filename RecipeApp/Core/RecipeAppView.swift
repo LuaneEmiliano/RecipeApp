@@ -9,13 +9,22 @@ import SwiftUI
 
 struct RecipeAppView: View {
     @ObservedObject var viewModel: RecipeAppViewModel
+    let cache = ImageCache() // Create a cache instance
     
     var body: some View {
-        List(viewModel.items) { item in
-        //    RecipeListItemRow(item: item)
-        }
-        .task {
-            viewModel.getRecipesDetails()
+        VStack {
+            SearchBar(viewModel: viewModel, textField: $viewModel.searchText)
+            List {
+                ForEach(viewModel.filteredRecipes) { recipe in
+                    RecipeListItemRow(
+                        viewModel: RecipeCellViewModel(recipe: recipe),
+                        cache: cache
+                    )
+                }
+            }
+            .task {
+                viewModel.getRecipesDetails()
+            }
         }
     }
 }

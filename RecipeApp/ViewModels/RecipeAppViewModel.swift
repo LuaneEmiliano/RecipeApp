@@ -9,16 +9,28 @@ import Foundation
 
 @MainActor
 class RecipeAppViewModel: ObservableObject {
-    @Published var items = [Recipe]()
+    @Published var container = [Recipe]()
+    @Published var searchText: String = ""
+    @Published var selectedCuisine: CuisineTypes? = nil
+    
     let service: RecipeServiceProtocol
     
     init(service: RecipeServiceProtocol) {
         self.service = service
     }
     
+    var filteredRecipes: [Recipe] {
+        container.filter { recipe in
+            let matchesCuisine = selectedCuisine == nil || recipe.cuisine?.localizedCaseInsensitiveContains(selectedCuisine!.rawValue) == true
+            let matchesSearch = searchText.isEmpty || recipe.name?.localizedCaseInsensitiveContains(searchText) == true
+            return matchesCuisine && matchesSearch
+        }
+    }
+
+    
     func getRecipesDetails() {
         Task {
-            items = try await service.fetchRecipesDetails()
+            container = try await service.fetchRecipesDetails()
         }
     }
 }

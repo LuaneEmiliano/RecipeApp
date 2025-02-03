@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct RecipeCellView: View {
+struct RecipeListItemRow: View {
     @ObservedObject var viewModel: RecipeCellViewModel
     var cache: ImageCache
     
@@ -39,5 +39,5 @@ struct RecipeCellView: View {
 }
 
 #Preview {
-    RecipeCellView(viewModel: RecipeCellViewModel(recipe: Recipe.mockRecipeAPP), cache:  ImageCache())
+    RecipeListItemRow(viewModel: RecipeCellViewModel(recipe: Recipe.mockRecipeAPP), cache:  ImageCache())
 }
